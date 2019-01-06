@@ -1,0 +1,39 @@
+void setup(){
+  size(1800,900);
+  background(0);
+}
+
+public void RandomWalk(int x_0,int y_0,int steps,int stepsize){
+  float xc = x_0;
+  float yc = y_0;
+  for(int i = 1; i<=steps; i++){
+    float dir = random(4);
+    //System.out.println(dir);
+    switch (floor(dir)){
+      case 0: line(xc,yc,xc,yc+stepsize);
+      yc+=stepsize;
+      //System.out.println("up!");
+      break;
+      
+      case 1: line(xc,yc,xc,yc-stepsize);
+      yc-=stepsize;
+      //System.out.println("down!");
+      break;
+      
+      case 2: line(xc,yc,xc+stepsize,yc);
+      xc+=stepsize;
+      //System.out.println("right!");
+      break;
+      
+      case 3: line(xc,yc,xc-stepsize,yc);
+      xc-=stepsize;
+      //System.out.println("left!");
+      break;
+    }
+  }
+}
+void draw(){
+  stroke(random(255),random(255),random(255));
+  strokeWeight(3)
+  RandomWalk(width/20*floor(random(1,21)),height/2,20,30);
+}
