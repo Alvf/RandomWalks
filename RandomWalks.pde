@@ -73,8 +73,8 @@ void setup(){
  background(0);
 }
 void draw(){
-  clear();
    pushMatrix();
+     clear();
   translate(width/2,height/2);
   RandomWalk bobby = new RandomWalk(200,20);
   bobby.pathcolor = color(floor(random(255)),floor(random(255)),floor(random(255)));
