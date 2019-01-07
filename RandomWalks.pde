@@ -1,4 +1,9 @@
 //The goal: Generate a "copy/paste"-able random walk
+//Apparently the setup function has to be in the file with the same name as the folder - oops
+void setup(){
+ size(1800,900);
+ background(0);
+}
 
 class RandomWalk{
   //an integer array, containing all of the vertices, formatted from center (0,0)
@@ -66,22 +71,4 @@ class RandomWalk{
     }
     
   }
-}
-
-void setup(){
- size(1800,900);
- background(0);
-}
-void draw(){
-   pushMatrix();
-     clear();
-  translate(width/2,height/2);
-  RandomWalk bobby = new RandomWalk(200,20);
-  bobby.pathcolor = color(floor(random(255)),floor(random(255)),floor(random(255)));
-  bobby.weight = 2;
-  for(int i = 1;i<=6; i++){
-  rotate(PI/3);
-  bobby.drawwalk();
-  }
-    popMatrix();
 }
