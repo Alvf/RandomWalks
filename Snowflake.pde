@@ -1,7 +1,7 @@
 //We generate some snowflakes
 int k = 1;
 boolean flip = false;
-int size = 300;
+int size = 200;
   RandomWalk bobby = new RandomWalk(size,20);
 
 void draw(){
@@ -13,13 +13,15 @@ void draw(){
     flip = true;
     k-=1;
   }
-  if(k==1){
+  if(k==0){
     flip = false;
     bobby.makenewwalk();
+    //saveFrame("Snowflake-####.png");
+    //noLoop();
   }
   
    pushMatrix();
-     clear();
+    clear();
   translate(width/2,height/2);
   for(int i = 1;i<=6; i++){
     if(i%2==0){
@@ -31,6 +33,8 @@ void draw(){
     }
   rotate(PI/3);
   bobby.drawwalk(k);
+  ellipse(bobby.path[2*k],bobby.path[2*k+1],10,10);
   }
     popMatrix();
+    //saveFrame("Snowflake-####.png");
 }

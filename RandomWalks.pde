@@ -1,7 +1,7 @@
 //The goal: Generate a "copy/paste"-able random walk
 //Apparently the setup function has to be in the file with the same name as the folder - oops
 void setup(){
- size(1800,900);
+ size(1000,1000);
  background(0);
 }
 
@@ -59,10 +59,12 @@ class RandomWalk{
       definedpath[2*i] = xc;
       definedpath[2*i+1] = yc;
       break;
+      
       }
     }
     path = definedpath;
   }
+  
   //generates a new walk and sets it to the path
   public void makenewwalk(){
   int xc = 0;
