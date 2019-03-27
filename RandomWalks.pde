@@ -1,7 +1,7 @@
 //The goal: Generate a "copy/paste"-able random walk
 //Apparently the setup function has to be in the file with the same name as the folder - oops
 void setup(){
- size(1000,1000);
+ size(540,540);
  background(0);
 }
 

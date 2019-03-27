@@ -1,23 +1,27 @@
 //We generate some snowflakes
-int k = 1;
+int k = 0;
+int cycles = 0;
 boolean flip = false;
 int size = 200;
-  RandomWalk bobby = new RandomWalk(size,20);
+  RandomWalk bobby = new RandomWalk(size,12);
 
 void draw(){
   //We oscillate the largeness of the snowflake; it is static now, since bobby just gets instantiated once at the setup
   if(k<size && !flip){
-    k+=1;
+    k+=2;
   }
   else{
     flip = true;
-    k-=1;
+    k-=2;
   }
   if(k==0){
     flip = false;
     bobby.makenewwalk();
-    //saveFrame("Snowflake-####.png");
-    //noLoop();
+    saveFrame("Snowflake-####.gif");
+    cycles+=1;
+    if(cycles>=2){
+    noLoop();
+    }
   }
   
    pushMatrix();
@@ -33,8 +37,8 @@ void draw(){
     }
   rotate(PI/3);
   bobby.drawwalk(k);
-  ellipse(bobby.path[2*k],bobby.path[2*k+1],10,10);
+  ellipse(bobby.path[2*k],bobby.path[2*k+1],4,4);
   }
     popMatrix();
-    //saveFrame("Snowflake-####.png");
+    saveFrame("Snowflake-####.gif");
 }
